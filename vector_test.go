@@ -2,7 +2,6 @@ package vector
 
 import "testing"
 import "math"
-import "fmt"
 
 func assert(cond bool, t *testing.T) {
     if cond != true {
@@ -58,12 +57,14 @@ func TestVectorDot(t *testing.T) {
 }
 
 func TestVectorAngle(t *testing.T) {
+    v1 := Vector{4,0,0}
     v2 := Vector{4,4,0}
-    fmt.Println(v2.mag())
+
+    assert(math.Floor(v1.angle(v2)) == 45.0, t)
 }
 
 func TestVectorDistance(t *testing.T) {
-    v1 := Vector{1,1,0}
+    v1 := Vector{4,0,0}
     v2 := Vector{4,4,0}
     v3 := v1.sub(v2)
 
