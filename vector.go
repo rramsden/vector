@@ -60,3 +60,11 @@ func (v1 Vector) norm() Vector {
         v1.z / mag,
     }
 }
+
+func (v1 Vector) negative() Vector {
+    return Vector{
+        -1*v1.x,
+        -1*v1.y,
+        -1*v1.z,
+    }
+}

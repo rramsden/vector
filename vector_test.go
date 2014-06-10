@@ -87,3 +87,12 @@ func TestVectorNorm(t *testing.T) {
     assert(trunc(norm.y) == 0.57, t)
     assert(trunc(norm.z) == 0.57, t)
 }
+
+func TestVectorNegative(t *testing.T) {
+    v1 := Vector{1,1,1}
+    v2 := v1.negative()
+
+    assert(v2.x == -1, t)
+    assert(v2.y == -1, t)
+    assert(v2.z == -1, t)
+}
