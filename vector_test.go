@@ -9,6 +9,13 @@ func assert(cond bool, t *testing.T) {
     }
 }
 
+func trunc(n float64) float64 {
+    x := int(n * 100)
+    y := int(n)
+
+    return float64(y) + (float64(x) / 100)
+}
+
 func TestVectorAdd(t *testing.T) {
     v1 := Vector{1,1,1}
     v2 := Vector{1,1,1}
@@ -70,4 +77,13 @@ func TestVectorDistance(t *testing.T) {
 
     expected := math.Sqrt(v3.x*v3.x + v3.y*v3.y + v3.z*v3.z)
     assert(v3.mag() == expected, t)
+}
+
+func TestVectorNorm(t *testing.T) {
+    v1 := Vector{2,2,2}
+
+    norm := v1.norm()
+    assert(trunc(norm.x) == 0.57, t)
+    assert(trunc(norm.y) == 0.57, t)
+    assert(trunc(norm.z) == 0.57, t)
 }

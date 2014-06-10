@@ -50,3 +50,13 @@ func (v1 Vector) orthogonal(v2 Vector) bool {
 func (v1 Vector) distance(v2 Vector) float64 {
     return v1.sub(v2).mag()
 }
+
+func (v1 Vector) norm() Vector {
+    mag := v1.mag()
+
+    return Vector{
+        v1.x / mag,
+        v1.y / mag,
+        v1.z / mag,
+    }
+}
