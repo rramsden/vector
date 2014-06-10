@@ -96,3 +96,13 @@ func TestVectorNegative(t *testing.T) {
     assert(v2.y == -1, t)
     assert(v2.z == -1, t)
 }
+
+func TestVectorCross(t *testing.T) {
+    v1 := Vector{2,3,4}
+    v2 := Vector{5,6,7}
+
+    val := v1.cross(v2)
+    assert(val.x == -3, t)
+    assert(val.y == 6, t)
+    assert(val.z == -3, t)
+}
